@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #f0f4f8;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      padding: 20px;
+      margin: 0 auto 30px;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .column {
+      background: #ffffff;
+      width: 45%;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .column:hover {
+      transform: translateY(-5px);
+    }
+
+    .voice-icon {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .voice-icon i {
+      font-size: 40px;
+      color: #3498db;
+      background: white;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .voice-icon i:hover {
+      background: #ecf0f1;
+      transform: scale(1.1);
+      color:red;
+      cursor: pointer;
+    }
+    .voice-icon img{
+        width: 50px;
+        height: 50px;
+    }
+  </style>
+  <!-- Font Awesome for Voice Icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <h1>My Personal Dashboard</h1>
+
+  <div class="quote-box">
+    {{quote}}
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <h3>NEWS</h3>
+      <p>Content for the first column of the first row.</p>
+    </div>
+    <div class="column">
+      <h3>Health Log</h3>
+      <p>Content for the second column of the first row.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <h3>To-Do-List</h3>
+      <p>Content for the first column of the second row.</p>
+    </div>
+    <div class="column">
+      <h3>Expense Tracker</h3>
+      <p>Content for the second column of the second row.</p>
+    </div>
+  </div>
+
+  <div class="voice-icon">
+    <i><img src="{{ url_for('static', filename='accessories/assistant.jpg') }}" alt="Voice Assistant"></i>
+
+  </div>
+
+</body>
+</html>
