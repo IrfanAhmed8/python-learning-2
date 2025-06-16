@@ -33,7 +33,7 @@ def water_consumption_graph(path_file):
         print("⚠️ No valid data to plot.")
         return
 
-    fig,axs=plt.subplots(3,1,figsize=(10,8))
+    fig,axs=plt.subplots(5,1,figsize=(10,8))
 
 
 
@@ -55,6 +55,7 @@ def water_consumption_graph(path_file):
     axs[2].set_xlabel("Date")
     axs[2].grid(True, linestyle='--', alpha=0.6)
     axs[2].tick_params(axis='x', rotation=45)
+   
 
     plt.tight_layout()
     plt.show()
