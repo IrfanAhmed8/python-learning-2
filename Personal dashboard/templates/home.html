@@ -99,7 +99,14 @@
   <div class="row">
     <div class="column">
       <h3>NEWS</h3>
-      <p>Content for the first column of the first row.</p>
+       {% for news in newsdata %}
+        <div class="news-card">
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.summary }}</p>
+            <img src={{news.image}}>
+            <a href="{{ news.link }}" target="_blank">Read full article</a>
+        </div>
+    {% endfor %}
     </div>
     <div class="column">
       <h3>Health Log</h3>
@@ -118,10 +125,22 @@
     </div>
   </div>
 
-  <div class="voice-icon">
-    <i><img src="{{ url_for('static', filename='accessories/assistant.jpg') }}" alt="Voice Assistant"></i>
+  <div class="voice-icon" >
+    <i><img onclick="voice_assistant()" src="{{ url_for('static', filename='accessories/assistant.jpg') }}" alt="Voice Assistant"></i>
 
   </div>
-
+  <script>
+    function voice_assistant(){
+      fetch('/assistant',{method:'POST'
+      })
+    /*   .then(response => response.json())
+    .then(data => {
+      console.log("Response:", data.message);
+    //  alert(data.message); // optional: shows what assistant did
+    })
+    .catch(error => console.error('Error:', error));*/
+    }
+  </script>
 </body>
+
 </html>
